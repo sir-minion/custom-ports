@@ -1,0 +1,25 @@
+diff --git "a/C:\\dev\\askia\\test-gha\\vcpkg-registry\\ports\\nanodbc\\a.txt" "b/C:\\dev\\askia\\test-gha\\vcpkg-registry\\ports\\nanodbc\\CMakeLists.txt"
+index 0a57bce..97ba940 100644
+--- "a/C:\\dev\\askia\\test-gha\\vcpkg-registry\\ports\\nanodbc\\a.txt"
++++ "b/C:\\dev\\askia\\test-gha\\vcpkg-registry\\ports\\nanodbc\\CMakeLists.txt"
+@@ -110,6 +110,12 @@ message(STATUS "nanodbc feature: Enable SQL_NO_DATA bug workaround - ${NANODBC_E
+ ## find unixODBC or iODBC config binary
+ ########################################
+ if(UNIX)
++  # Try to find unixodbc package first
++  find_package(unixodbc)
++  if(unixodbc_FOUND)
++    message(STATUS "nanodbc build: unixODBC package found")
++    set(ODBCLIB UNIX::odbc)
++  else()
+   # Try to find unixODBC first via odbc_config program.
+   find_program(ODBC_CONFIG odbc_config
+     PATHS $ENV{ODBC_PATH}/bin /usr/bin /usr/local/bin)
+@@ -158,6 +164,7 @@ if(UNIX)
+       endif()
+     endif()
+   endif()
++  endif()
+ 
+   if(NOT ODBC_CONFIG)
+     message(FATAL_ERROR "can not find a suitable odbc driver manager")

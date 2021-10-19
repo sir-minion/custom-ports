@@ -1,0 +1,17 @@
+{
+	"name": "amqp",
+	"version": "0.4.2",
+	"description": "Message queuing library (wrapper around rabbitmq-c).",
+	"homepage": "https://github.com/Askia/Amqp",
+	"dependencies": [
+		"librabbitmq",
+		{
+			"name": "vcpkg-cmake",
+			"host": true
+		},
+		{
+			"name": "vcpkg-cmake-config",
+			"host": true
+		}
+	]
+}

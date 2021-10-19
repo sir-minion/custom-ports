@@ -1,0 +1,16 @@
+{
+  "default": {
+    "amqp": {
+      "baseline": "0.4.2",
+      "port-version": 1
+    },
+    "nanodbc": {
+      "baseline": "2.13.0",
+      "port-version": 5
+    },
+    "unixodbc": {
+      "baseline": "2.3.9",
+      "port-version": 0
+    }
+  }
+}
