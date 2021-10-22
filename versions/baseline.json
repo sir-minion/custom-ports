@@ -2,7 +2,7 @@
   "default": {
     "amqp": {
       "baseline": "0.4.2",
-      "port-version": 2
+      "port-version": 3
     },
     "nanodbc": {
       "baseline": "2.13.0",

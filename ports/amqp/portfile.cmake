@@ -1,9 +1,10 @@
-vcpkg_from_github(
+message(STATUS "Here be dragons...")
+vcpkg_from_git(
 	OUT_SOURCE_PATH SOURCE_PATH
-	REPO Askia/Amqp
+	URL https://github.com/Askia/Amqp
 	REF e2bee8789e898dee31b5cc5ac7fddc492c282ca7
-	SHA512 d1dc426c0613daa2fd9e650684935cebb5ed9ea2b1e13a80bb8a8f885216b94301b9eaae32a0d724f5e9514409af94b3c456c370cb66ab8de6701b7e9d9fe83b
 )
+message(STATUS "... hear us roar!")
 
 vcpkg_cmake_configure(
 	SOURCE_PATH "${SOURCE_PATH}"
