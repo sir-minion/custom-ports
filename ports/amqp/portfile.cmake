@@ -1,11 +1,11 @@
-message(STATUS "Here be dragons...")
 vcpkg_from_git(
 	OUT_SOURCE_PATH SOURCE_PATH
 	URL https://github.com/Askia/Amqp
 	REF e2bee8789e898dee31b5cc5ac7fddc492c282ca7
 )
-message(STATUS "... hear us roar!")
-
+if(DEFINED VCPKG_CMAKE_CONFIGURE_OPTIONS)
+message(STATUS "VCPKG_CMAKE_CONFIGURE_OPTIONS exists: ${VCPKG_CMAKE_CONFIGURE_OPTIONS}")
+endif()
 vcpkg_cmake_configure(
 	SOURCE_PATH "${SOURCE_PATH}"
 )
